@@ -247,6 +247,124 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://qianyong.site/2017/03/30/JavaScript拖拽移动窗口的函数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="钱勇">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QianYong">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/30/JavaScript拖拽移动窗口的函数/" itemprop="url">
+                  JavaScript拖拽移动窗口的函数
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-30T19:02:16+08:00">
+                2017-03-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="JavaScript拖拽移动窗口函数"><a href="#JavaScript拖拽移动窗口函数" class="headerlink" title="JavaScript拖拽移动窗口函数"></a>JavaScript拖拽移动窗口函数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">moveDilog</span>(<span class="params">modal, sure</span>) </span>&#123;</div><div class="line">    $(<span class="string">"#"</span> + modal).mousedown(<span class="function"><span class="keyword">function</span> (<span class="params">e</span>)//<span class="title">e</span>鼠标事件</span></div><div class="line">    &#123;</div><div class="line">        $(<span class="keyword">this</span>).css(<span class="string">"cursor"</span>, <span class="string">"move"</span>); <span class="comment">//改变鼠标指针的形状</span></div><div class="line"></div><div class="line">        <span class="keyword">var</span> offset = $(<span class="keyword">this</span>).offset(); <span class="comment">//DIV在页面的位置</span></div><div class="line">        <span class="keyword">var</span> x = e.pageX - offset.left; <span class="comment">//获得鼠标指针离DIV元素左边界的距离</span></div><div class="line">        <span class="keyword">var</span> y = e.pageY - offset.top; <span class="comment">//获得鼠标指针离DIV元素上边界的距离</span></div><div class="line"></div><div class="line">        <span class="comment">//绑定鼠标的移动事件，光标在DIV元素外面也要有效果，所以要用doucment的事件</span></div><div class="line">        $(<span class="built_in">document</span>).bind(<span class="string">"mousemove"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">ev</span>)</span></div><div class="line">        &#123;</div><div class="line">            $(<span class="string">"#"</span> + modal).stop(); <span class="comment">//加上这个之后</span></div><div class="line"></div><div class="line">            <span class="keyword">var</span> _x = ev.pageX - x; <span class="comment">//获得X轴方向移动的值</span></div><div class="line">            <span class="keyword">var</span> _y = ev.pageY - y; <span class="comment">//获得Y轴方向移动的值</span></div><div class="line">            $(<span class="string">"#"</span> + modal).css(&#123;<span class="attr">left</span>: _x + <span class="string">"px"</span>, <span class="attr">top</span>: _y + <span class="string">"px"</span>&#125;);</div><div class="line">        &#125;);</div><div class="line">    &#125;);</div><div class="line">    $(<span class="built_in">document</span>).mouseup(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        $(<span class="string">"#"</span> + modal).css(<span class="string">"cursor"</span>, <span class="string">"default"</span>);</div><div class="line">        $(<span class="keyword">this</span>).unbind(<span class="string">"mousemove"</span>);</div><div class="line">    &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://qianyong.site/2017/03/12/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -411,7 +529,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
